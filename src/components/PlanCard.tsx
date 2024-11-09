@@ -41,7 +41,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
         )}
       </div>
       <p className="text-gray-400 text-4xl font-semibold mt-5">
-       $<span className="text-black font-bold">{price}{" "}</span> 
+        $<span className="text-black font-bold">{price} </span>
         <span className="text-gray-400 text-base font-normal">per month</span>
       </p>
 
@@ -82,7 +82,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
       </div>
 
       <div className="mt-4">
-      <ul>
+        <ul>
           {features.map((feature, index) => (
             <li
               key={index}
