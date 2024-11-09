@@ -99,7 +99,7 @@ function Index() {
                 {...plan}
                 isAnnual={false}
                 isMiddleCard={index === 1}
-                annualPrice={parseInt(plan.price) * 12} // Passing the annual price
+                annualPrice={parseInt(plan.price) * 12}
               />
             ))}
           </div>
@@ -111,7 +111,7 @@ function Index() {
                 {...plan}
                 isAnnual={true}
                 isMiddleCard={index === 1}
-                annualPrice={parseInt(plan.price) * 12} // Passing the annual price
+                annualPrice={parseInt(plan.price) * 12} 
               />
             ))}
           </div>

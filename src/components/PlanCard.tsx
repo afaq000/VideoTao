@@ -87,7 +87,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
             <li
               key={index}
               className={`flex text-gray-500 text-lg gap-3 items-center ${
-                index === 0 ? "font-bold text-gray-700" : "" // Make the first feature bold
+                index === 0 ? "font-bold text-gray-700" : ""
               }`}
             >
               <TickIcon /> {feature}
