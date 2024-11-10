@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import PlanCard from "@/components/PlanCard";
+import UnlimitedPlanCard from "@/components/UnlimitedPlanCard";
 
 function Index() {
   const router = useRouter();
@@ -189,6 +190,39 @@ function Index() {
           </div>
         )}
       </div>
+
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 py-5">
+
+      <UnlimitedPlanCard 
+        title="Clip"
+      />
+      <UnlimitedPlanCard 
+        title="Blog posts"
+      />
+      <UnlimitedPlanCard 
+        title="Podcast shownotes"
+      />
+
+<UnlimitedPlanCard 
+        title="Chapters"
+      />
+
+<UnlimitedPlanCard 
+        title="Social Posts"
+      />
+
+<UnlimitedPlanCard 
+        title="Translations"
+      />
+
+<UnlimitedPlanCard 
+        title="Subtitles"
+      />
+
+<UnlimitedPlanCard 
+        title="Transcripts"
+      />
+    </div>
     </div>
   );
 }
