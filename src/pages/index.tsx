@@ -351,7 +351,7 @@ function Index() {
         //   className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
         //   Show More
         // </button>
-        <div className="w-full flex justify-center py-5 ">
+        <div className="w-full flex justify-center py-5 mb-20">
         <Button variant={"default"}  onClick={handleShowMore}>
            Show More
         </Button>
