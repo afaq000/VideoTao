@@ -62,7 +62,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
         {!isAnnual && (
           <Link
             href={"/"}
-            className="hover:underline flex items-center mt-1 text-gray-400"
+            className="hover:underline flex items-center mt-1 text-gray-400 text-xs"
           >
             Save 20% with yearly{" "}
             <span className="mt-1">
@@ -72,7 +72,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
         )}
 
         {isAnnual && (
-          <p className="text-gray-400 font-thin font-sans">Billed annually as ${annualPrice}</p>
+          <p className="text-gray-400 text-xs font-thin font-sans">Billed annually as ${annualPrice}</p>
         )} 
       </CardContent>
 
