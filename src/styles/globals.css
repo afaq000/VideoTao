@@ -4,7 +4,7 @@
 
 
 /* Add these custom font feature settings in your globals.css or tailwind.css file */
-@layer utilities {
+/* @layer utilities {
     .font-dlig {
       font-feature-settings: "dlig" 1;
     }
@@ -56,5 +56,5 @@
     .font-zero {
       font-feature-settings: "zero" 1;
     }
-  }
+  } */
   

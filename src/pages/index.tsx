@@ -123,34 +123,34 @@ function Index() {
         <p className="text-black text-4xl font-medium font-sans font-dlig font-ss07">Subscribe and Go Pro</p>
       </div>
 
-      <div className="w-full items-center justify-center flex">
-        <div className="min-w-[150px] px-1 py-1 bg-[#F1F5F9] rounded-full">
+      <div className="w-full items-center justify-center flex mt-5">
+        <div className="min-w-[150px] px-1 py-1 bg-[#E5E5E5] rounded-full">
           <Button
             variant={activePlan === "monthly" ? "active" : "active"}
             onClick={() => setActivePlan("monthly")}
             className={
               activePlan === "monthly"
-                ? "bg-white text-primary-foreground rounded-full px-10"
-                : "text-gray-400"
+                ? "bg-white text-xs text-primary-foreground rounded-full px-10"
+                : "text-gray-400 text-xs"
             }
           >
-            Monthly Plan
+            Monthly
           </Button>
           <Button
             variant={activePlan === "annual" ? "active" : "active"}
             onClick={() => setActivePlan("annual")}
             className={
               activePlan === "annual"
-                ? "bg-white text-primary-foreground rounded-full px-10"
-                : "text-gray-400"
+                ? "bg-white text-xs text-primary-foreground rounded-full px-10"
+                : "text-gray-400 text-xs"
             }
           >
-            Annual Plan{" "}
+            Annual{" "}
             <span
               className={
                 activePlan === "annual"
-                  ? "bg-white text-primary-foreground text-[10px]"
-                  : "text-gray-400 text-[10px]"
+                  ? "bg-white text-xs text-primary-foreground text-[10px]"
+                  : "text-gray-400  text-[10px]"
               }
             >
               {" "}

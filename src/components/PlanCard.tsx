@@ -62,7 +62,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
         {!isAnnual && (
           <Link
             href={"/"}
-            className="hover:underline flex items-center mt-1 text-gray-400 text-xs"
+            className="hover:underline flex items-center mt-1  text-gray-400 text-sm"
           >
             Save 20% with yearly{" "}
             <span className="mt-1">
@@ -72,7 +72,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
         )}
 
         {isAnnual && (
-          <p className="text-gray-400 text-xs font-thin font-sans">Billed annually as ${annualPrice}</p>
+          <p className="text-gray-400 text-sm font-thin font-sans mt-1">Billed annually as ${annualPrice}</p>
         )} 
       </CardContent>
 
@@ -102,7 +102,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
             {features.map((feature, index) => (
               <li
                 key={index}
-                className={`flex text-gray-500 text-lg gap-3 items-center ${
+                className={`flex text-gray-500 text-lg gap-4 items-center justify-start ${
                   index === 0 ? "font-bold text-gray-700" : ""
                 }`}
               >
