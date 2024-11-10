@@ -31,10 +31,10 @@ const PlanCard: React.FC<PlanCardProps> = ({
   annualPrice,
 }) => {
   return (
-    <Card className="w-full rounded-2xl border-[3px] border-gray-200 bg-white ">
+    <Card className="w-full rounded-2xl border-[2px] border-gray-200 bg-white ">
       <div className="w-full flex justify-between">
-        <div className="h-6" />
-
+        <div className="h-7" />
+       
         {isMiddleCard && (
           <div className="flex justify-end items-center">
             <span className="bg-[#e3ddfd] min-w-[70px] text-[#5b3cd5] text-[12px] p-1 mt-2 mr-2 rounded-2xl flex justify-center">
@@ -44,19 +44,19 @@ const PlanCard: React.FC<PlanCardProps> = ({
         )}
       </div>
 
-      <CardHeader className="flex gap-4 flex-row">
-        <CardTitle className="text-xl font-bold">{title}</CardTitle>
+      <CardHeader className="flex gap-4 flex-row items-center">
+        <CardTitle className="text-base font-semibold text-gray-700">{title}</CardTitle>
         {isAnnual && (
-          <span className="min-w-[100px] bg-yellow-200 rounded-2xl h-5 text-center text-xs flex items-center justify-center text-yellow-600">
+          <span className="min-w-[100px] bg-[#FEF9C3] rounded-2xl h-5 text-center text-xs flex items-center justify-center text-yellow-600">
             Save $50/year
           </span>
         )}
       </CardHeader>
 
       <CardContent>
-        <p className="text-gray-400 text-4xl font-semibold mt-5">
-          $<span className="text-black font-bold">{price} </span>
-          <span className="text-gray-400 text-base font-normal">per month</span>
+        <p className="text-gray-300 text-5xl font-medium ">
+          $<span className="text-[#404040] font-extrabold">{price} </span>
+          <span className="text-gray-400 text-sm font-thin">per month</span>
         </p>
 
         {!isAnnual && (
@@ -72,8 +72,8 @@ const PlanCard: React.FC<PlanCardProps> = ({
         )}
 
         {isAnnual && (
-          <p className="text-gray-400">Billed annually as ${annualPrice}</p>
-        )}
+          <p className="text-gray-400 font-thin font-sans">Billed annually as ${annualPrice}</p>
+        )} 
       </CardContent>
 
       <CardFooter className="flex flex-col">
