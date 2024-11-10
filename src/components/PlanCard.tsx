@@ -37,7 +37,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
        
         {isMiddleCard && (
           <div className="flex justify-end items-center">
-            <span className="bg-[#e3ddfd] min-w-[70px] text-[#5b3cd5] text-[12px] p-1 mt-2 mr-2 rounded-2xl flex justify-center">
+            <span className="bg-[#e3ddfd] min-w-[70px] text-[#5b3cd5] text-[12px] py-1 mr-2 rounded-2xl flex justify-center">
               Popular
             </span>
           </div>
