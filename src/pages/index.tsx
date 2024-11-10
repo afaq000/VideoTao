@@ -120,7 +120,7 @@ function Index() {
       </div>
 
       <div className={cn("flex justify-center items-center p-3")}>
-        <p className="text-black text-4xl font-medium">Subscribe and Go Pro</p>
+        <p className="text-black text-4xl font-medium font-sans font-dlig font-ss07">Subscribe and Go Pro</p>
       </div>
 
       <div className="w-full items-center justify-center flex">

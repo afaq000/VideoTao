@@ -10,6 +10,24 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			sans: ['Inter', 'sans-serif'], // Add Inter or any other font
+		  },
+		  fontFeatureSettings: {
+			dlig: '"dlig" 1',
+			ss07: '"ss07" 1',
+			ss08: '"ss08" 1',
+			zero: '"zero" 1',
+			cv01: '"cv01" 1',
+			cv03: '"cv03" 1',
+			cv04: '"cv04" 1',
+			cv05: '"cv05" 1',
+			cv08: '"cv08" 1',
+			cv09: '"cv09" 1',
+			cv11: '"cv11" 1',
+			cv12: '"cv12" 1',
+			cv13: '"cv13" 1',
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
