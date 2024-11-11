@@ -235,7 +235,7 @@ function Index() {
             onClick={() => setActivePlan("monthly")}
             className={
               activePlan === "monthly"
-                ? "bg-white text-xs text-primary-foreground rounded-full px-10"
+                ? "bg-white text-xs  px-10"
                 : "text-gray-400 text-xs"
             }
           >
@@ -246,7 +246,7 @@ function Index() {
             onClick={() => setActivePlan("annual")}
             className={
               activePlan === "annual"
-                ? "bg-white text-xs text-primary-foreground rounded-full px-10"
+                ? "bg-white text-xs  rounded-full px-10"
                 : "text-gray-400 text-xs"
             }
           >
@@ -254,7 +254,7 @@ function Index() {
             <span
               className={
                 activePlan === "annual"
-                  ? "bg-white text-xs text-primary-foreground text-[10px]"
+                  ? "bg-white text-xs text-[10px]"
                   : "text-gray-400  text-[10px]"
               }
             >

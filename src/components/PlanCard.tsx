@@ -31,7 +31,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
   annualPrice,
 }) => {
   return (
-    <Card className="w-full rounded-2xl border-[2px] border-gray-200 bg-white ">
+    <Card className="w-full rounded-lg border-[2px] border-gray-200 bg-white ">
       <div className="w-full flex justify-between">
         <div className="h-7" />
        
@@ -81,16 +81,16 @@ const PlanCard: React.FC<PlanCardProps> = ({
           {isMiddleCard ? (
             <Link href={"/"}>
               <Button
-                variant="selectPlan"
-                className="min-w-[100px] mt-4 h-12 w-full text-lg bg-[#7c3aed] text-white"
+                variant={"default"}
+                className="min-w-[100px] mt-4 h-12 w-full text-lg border bg-[#7c3aed] text-white"
               >
                 Choose plan
               </Button>
             </Link>
           ) : (
             <Button
-              variant="selectPlan"
-              className="min-w-[100px] mt-4 h-12 w-full text-lg text-[#7c3aed]"
+              variant="default"
+              className="min-w-[100px] mt-4 h-12 w-full text-lg border bg-white shadow-md border-[#c1a5f2] text-[#7c3aed]"
             >
               Choose plan
             </Button>
