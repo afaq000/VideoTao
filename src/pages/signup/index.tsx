@@ -79,7 +79,7 @@ const SignUpPage = () => {
         </CardContent>
 
         <CardFooter>
-          <Button variant={"default"} onClick={handleLogin} className="w-full mt-4">Login</Button>
+          <Button variant={"default"} onClick={handleLogin} className="w-full mt-4">Create Account</Button>
         </CardFooter>
 
         <div className='flex justify-center pb-3'>
