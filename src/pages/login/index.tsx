@@ -23,13 +23,14 @@ const LoginPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <CardHeader>
-          <h2 className="text-xl font-semibold text-center">Login</h2>
+          <h2 className="text-2xl font-semibold text-center">Login</h2>
+          <h2 className="text-xs text-gray-400 text-center">Get Start</h2>
         </CardHeader>
       <Card className="w-96 shadow-lg mt-3">
         
 
         <CardContent>
-          <div className="space-y-2">
+          <div className="space-y-2 pt-4">
             <div>
               <Label htmlFor="email">Email</Label>
               <Input
@@ -68,6 +69,12 @@ const LoginPage = () => {
         <CardFooter>
           <Button variant={"default"} onClick={handleLogin} className="w-full mt-4">Login</Button>
         </CardFooter>
+         
+        <div className='flex justify-end -mt-2 px-4'>
+        <Link href={"/signup"}>
+        <p className='text-blue-600 hover:underline text-xxs'>
+            Forget Password</p></Link>
+        </div>
 
         <div className='flex justify-center pb-3'>
         <Link href={"/signup"}>

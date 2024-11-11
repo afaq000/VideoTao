@@ -13,6 +13,9 @@ export default {
 		fontFamily: {
 			sans: ['Inter', 'sans-serif'], // Add Inter or any other font
 		  },
+		  fontSize: {
+			xxs: '10px',  // Define text-[10px]
+		  },
 		  fontFeatureSettings: {
 			dlig: '"dlig" 1',
 			ss07: '"ss07" 1',
@@ -70,11 +73,6 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
-  		// borderRadius: {
-  		// 	lg: 'var(--radius)',
-  		// 	md: 'calc(var(--radius) - 2px)',
-  		// 	sm: 'calc(var(--radius) - 4px)'
-  		// }
   	}
   },
   plugins: [require("tailwindcss-animate")],
