@@ -352,7 +352,7 @@ function Index() {
         //   Show More
         // </button>
         <div className="w-full flex justify-center py-5 mb-20">
-        <Button variant={"default"}  onClick={handleShowMore}>
+        <Button variant={"active"} className="border border-gray-300"  onClick={handleShowMore}>
            Show More
         </Button>
         </div>

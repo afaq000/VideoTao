@@ -57,7 +57,7 @@ const LoginPage = () => {
                 <button
                   type="button"
                   onClick={handlePasswordVisibilityToggle}
-                  className="absolute inset-y-0 right-2 flex items-center text-gray-500"
+                  className="absolute inset-y-0 right-2 flex items-center bg-none text-gray-500"
                 >
                   {passwordVisible ? <IoEyeOff /> : <IoEye />}
                 </button>
