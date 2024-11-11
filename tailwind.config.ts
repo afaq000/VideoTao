@@ -16,6 +16,11 @@ export default {
 		  fontSize: {
 			xxs: '10px',  // Define text-[10px]
 		  },
+		  transitionTimingFunction: {
+			'ease-red': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',     // For red bar
+			'ease-yellow': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)', // For yellow bar
+			'ease-violet': 'cubic-bezier(0.6, -0.28, 0.735, 0.045)',  // For violet bar
+		  },
 		  fontFeatureSettings: {
 			dlig: '"dlig" 1',
 			ss07: '"ss07" 1',

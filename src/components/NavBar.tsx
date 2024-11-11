@@ -1,96 +1,105 @@
-import { CogIcon, HomeIcon, PuzzleIcon } from "lucide-react";
+import { CogIcon, HomeIcon, PuzzleIcon, ChevronDownIcon } from "lucide-react";
 import React from "react";
 import { Button } from "./ui/button";
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuItem } from "./ui/dropdown-menu";
 import { Avatar } from "./ui/avatar";
-// import { Button, Avatar, Dropdown, DropdownItem } from "@shadcn/ui";
-// import { HomeIcon, PuzzleIcon, CogIcon } from "@shadcn/icons";
-
-type Checked = Props["checked"]
+import Link from "next/link";
 
 const Navbar = () => {
+  const [showStatusBar, setShowStatusBar] = React.useState(true);
+  const [showActivityBar, setShowActivityBar] = React.useState(false);
+  const [showPanel, setShowPanel] = React.useState(false);
 
-    const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
-    const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
-    const [showPanel, setShowPanel] = React.useState<Checked>(false)
-   
   return (
-    <nav className="flex items-center justify-between bg-gray-900 p-4 text-white">
-      {/* Left section: Logo and navigation */}
-      <div className="flex items-center space-x-4">
+    <nav className="relative flex items-center justify-between bg-[#161616] p-1 px-4 text-white">
+     
+      <div className="absolute left-3 top-0 -translate-y-1/4 hidden lg:block">
+  <div className="group grid grid-cols-3 gap-1">
+    <div
+      className="h-12 group-hover:translate-y-3 w-[4px] rounded-full bg-red-500 transition-transform duration-500 ease-red"
+    ></div>
+    <div
+      className="h-6 group-hover:-translate-y-2 w-[4px] rounded-full bg-yellow-500 transition-transform duration-500 ease-yellow"
+    ></div>
+    <div
+      className="h-9 group-hover:translate-y-1 w-[4px] rounded-full bg-violet-500 transition-transform duration-500 ease-violet"
+    ></div>
+  </div>
+</div>
+
+      <div className="flex items-center space-x-4 pl-10">
         <div className="flex items-center space-x-2">
-          {/* Logo or Custom Branding */}
-          <span className="text-lg font-semibold">Video Tap</span>
+          <span className="text-xxs ">Video Tap</span>
         </div>
         <div className="flex items-center space-x-6">
-          <NavItem icon={<HomeIcon />} label="Home" />
-          <NavItem icon={<PuzzleIcon />} label="Integrations" />
-          <NavItem icon={<CogIcon />} label="Settings" />
+          <NavItem  icon={<HomeIcon className="h-4 w-4" />} label="Home" />
+          <NavItem icon={<PuzzleIcon className="h-4 w-4"  />} label="Integrations" />
+          <NavItem icon={<CogIcon className="h-4 w-4"  />} label="Settings" />
         </div>
       </div>
 
-      {/* Right section: Free videos, Upgrade button, Team dropdown, Avatar */}
       <div className="flex items-center space-x-6">
-        {/* Free Videos Left */}
-        <span className="text-sm text-gray-400">3 free videos left</span>
-
-        {/* Upgrade Button */}
-        <Button className="bg-pink-500 hover:bg-pink-600 text-white rounded-md px-4 py-2">
+        <Link href={"/"}><span className="text-[8px] text-gray-400 underline">3 free videos left</span>
+        </Link>
+        <Button variant={"active"} className="bg-pink-500 hover:bg-pink-600 text-white rounded-md px-2 text-xxs">
           Upgrade
         </Button>
 
         <DropdownMenu>
-
-          <DropdownMenuContent>
-            <span className="text-sm">Afaq Team</span>
+          <DropdownMenuTrigger asChild>
+            <Button className="bg-transparent text-white flex items-center space-x-1 text-xxs">
+              <span>Afaq Team</span>
+              <ChevronDownIcon className="w-4 h-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="bg-gray-800 text-white rounded-md shadow-lg p-2 w-48">
+            <DropdownMenuLabel className="text-gray-400">Team Menu</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Team Settings</DropdownMenuItem>
+            <DropdownMenuItem>Log Out</DropdownMenuItem>
           </DropdownMenuContent>
-          <DropdownMenuContent>Team Settings</DropdownMenuContent>
-          <DropdownMenuContent>Log Out</DropdownMenuContent>
         </DropdownMenu>
 
-
         <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem
-          checked={showStatusBar}
-          onCheckedChange={setShowStatusBar}
-        >
-          Status Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showActivityBar}
-          onCheckedChange={setShowActivityBar}
-          disabled
-        >
-          Activity Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
-          checked={showPanel}
-          onCheckedChange={setShowPanel}
-        >
-          Panel
-        </DropdownMenuCheckboxItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-
-
-        {/* Profile Avatar */}
-        <Avatar className="w-8 h-8 bg-gray-600 text-white">AH</Avatar>
+          <DropdownMenuTrigger asChild>
+            <Avatar className="w-8 h-8 bg-gray-600 text-white flex justify-center items-center text-xxs rounded-lg"><p>AH</p></Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="bg-gray-800 text-white rounded-md shadow-lg p-2 w-56">
+            <DropdownMenuLabel className="text-gray-400">Appearance</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem
+            //   as="button"
+              onClick={() => setShowStatusBar(!showStatusBar)}
+              checked={showStatusBar}
+            >
+              Status Bar
+            </DropdownMenuItem>
+            <DropdownMenuItem
+            //   as="button"
+              onClick={() => setShowActivityBar(!showActivityBar)}
+              checked={showActivityBar}
+              disabled
+            >
+              Activity Bar
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              as="button"
+              onClick={() => setShowPanel(!showPanel)}
+              checked={showPanel}
+            >
+              Panel
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </nav>
   );
 };
 
-// NavItem Component for individual navigation items
 const NavItem = ({ icon, label }: { icon: React.ReactNode; label: string }) => (
-  <div className="flex items-center space-x-1 hover:text-gray-300 cursor-pointer">
+  <div className="flex items-center space-x-2 hover:text-gray-300 cursor-pointer">
     {icon}
-    <span className="text-sm">{label}</span>
+    <span className="text-xxs ">{label}</span>
   </div>
 );
 
