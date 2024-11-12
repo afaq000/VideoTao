@@ -21,7 +21,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="w-full flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <CardHeader>
         <h2 className="text-2xl font-extrabold text-center">Get Started</h2>
           <h2 className="text-xs text-center text-gray-400">Create New Account</h2>
