@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Navbar from "@/components/NavBar";
+import RightSideBar from "@/components/RightSidebar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,9 +14,16 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 function index() {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // Toggle function to open/close the sidebar
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
   return (
     <div className="bg-gray-100 ">
       <Navbar />
@@ -28,10 +37,17 @@ function index() {
             </span>
           </h1>
 
-          <Button className="bg-purple-600 text-white rounded-md px-4 py-2">
+          <Button
+            onClick={toggleSidebar}
+            className="bg-purple-600 text-white rounded-md px-4 py-2">
             + Add Videos <span className="ml-2 text-xs">2 free</span>
           </Button>
         </div>
+
+        
+
+
+       
 
         <div className="flex bg-gray-100 min-h-screen py-10">
           <div className="flex flex-col space-y-6 w-1/4 pr-6">
@@ -138,6 +154,21 @@ function index() {
           </div>
         </div>
       </div>
+
+       {isSidebarOpen && (
+        <div
+          className="fixed right-0 top-0 h-full bg-white shadow-lg"
+          style={{ width: "500px" }}
+        >
+          <RightSideBar />
+          <button
+            onClick={toggleSidebar}
+            className="absolute top-0 right-0 bg-gray-300 w-8 h-8 rounded-full"
+          >
+            x
+          </button>
+        </div>
+      )}
     </div>
   );
 }

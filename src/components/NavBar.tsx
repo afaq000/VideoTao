@@ -111,10 +111,10 @@ const Navbar = () => {
               <DropdownMenuContent className="bg-gray-800 text-white rounded-md shadow-lg p-2 w-56">
                 <DropdownMenuLabel className="text-gray-400">Appearance</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => setShowStatusBar(!showStatusBar)} checked={showStatusBar}>
+                <DropdownMenuItem as="button" onClick={() => setShowStatusBar(!showStatusBar)} checked={showStatusBar}>
                   Status Bar
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setShowActivityBar(!showActivityBar)} checked={showActivityBar} disabled>
+                <DropdownMenuItem as="button" onClick={() => setShowActivityBar(!showActivityBar)} checked={showActivityBar} disabled>
                   Activity Bar
                 </DropdownMenuItem>
                 <DropdownMenuItem as="button" onClick={() => setShowPanel(!showPanel)} checked={showPanel}>
