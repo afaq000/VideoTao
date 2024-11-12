@@ -6,10 +6,10 @@ const RightSideBar = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gray-50 ">
       {/* Animated Bars on the Left */}
-      <div className="absolute right-0 -translate-x-[250px] -translate-y-[150px]">
+      <div className="absolute right-0 -translate-x-64 -translate-y-40">
         <div className="group grid grid-cols-3 gap-1">
           <div className="h-12 group-hover:translate-y-3 w-[4px] rounded-full bg-red-500 transition-transform duration-500 ease-out"></div>
-          <div className="h-20 group-hover:-translate-y-2 w-[4px] rounded-full bg-yellow-500 transition-transform duration-500 ease-out"></div>
+          <div className="h-32 group-hover:-translate-y-2 w-[4px] rounded-full bg-yellow-500 transition-transform duration-500 ease-out"></div>
           <div className="h-12 group-hover:translate-y-1 w-[4px] rounded-full bg-violet-500 transition-transform duration-500 ease-out"></div>
         </div>
       </div>
@@ -18,7 +18,7 @@ const RightSideBar = () => {
       <Card className="w-full max-w-lg p-6 bg-white  rounded-lg shadow-none border-none">
         {/* Header */}
         <CardHeader className=" pb-4">
-          <CardTitle className="text-xl font-semibold text-center">Add Videos</CardTitle>
+          <CardTitle className="text-xl font-semibold text-center z-10">Add Videos</CardTitle>
           <p className="text-xxs text-gray-600 text-center">
             You have <strong>3 free videos</strong>
           </p>

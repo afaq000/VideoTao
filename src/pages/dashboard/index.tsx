@@ -29,7 +29,7 @@ function index() {
       <Navbar />
 
       <div className="w-full px-14 ">
-        <div className="flex justify-between items-center mt-10  ">
+        <div className="flex  flex-col lg:flex-row lg:justify-between items-center mt-10  ">
           <h1 className="text-2xl ">
             Dashboard{" "}
             <span className="text-xs text-gray-400">
@@ -49,9 +49,9 @@ function index() {
 
        
 
-        <div className="flex bg-gray-100 min-h-screen py-10">
-          <div className="flex flex-col space-y-6 w-1/4 pr-6">
-            <Card className="border bg-white">
+        <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen py-10">
+          <div className="w-full flex flex-row gap-4 lg:gap-0 lg:flex-col py-5  space-y-0 lg:space-y-6  lg:w-1/4 pr-0 lg:pr-6">
+            <Card className="w-full border bg-white">
               <CardHeader>
                 <CardTitle>Folders</CardTitle>
               </CardHeader>
@@ -71,7 +71,7 @@ function index() {
               </CardContent>
             </Card>
 
-            <Card className="border bg-white">
+            <Card className="w-full border bg-white">
               <CardHeader>
                 <CardTitle>Free Trial</CardTitle>
               </CardHeader>
