@@ -50,7 +50,7 @@ function index() {
        
 
         <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen py-10">
-          <div className="w-full flex flex-row gap-4 lg:gap-0 lg:flex-col py-5  space-y-0 lg:space-y-6  lg:w-1/4 pr-0 lg:pr-6">
+          <div className="w-full flex flex-col sm2:flex-row gap-4 lg:gap-0 lg:flex-col py-5  space-y-0 lg:space-y-6  lg:w-1/4 pr-0 lg:pr-6">
             <Card className="w-full border bg-white">
               <CardHeader>
                 <CardTitle>Folders</CardTitle>
@@ -157,8 +157,7 @@ function index() {
 
        {isSidebarOpen && (
         <div
-          className="fixed right-0 top-0 h-full bg-white shadow-lg"
-          style={{ width: "500px" }}
+          className="w-92 fixed right-0 top-0 h-full bg-white shadow-lg overflow-y-auto"
         >
           <RightSideBar />
           <button

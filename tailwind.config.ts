@@ -36,6 +36,9 @@ export default {
 			cv12: '"cv12" 1',
 			cv13: '"cv13" 1',
 		  },
+		  screens: {
+			sm2: "478px", // Custom screen for 478px
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
