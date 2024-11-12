@@ -142,9 +142,13 @@ function index() {
                   <TableCell colSpan={5}>
                     <div className="flex flex-col  space-y-2 py-4">
                       <p className="text-xs text-gray-500">Showing 1 to 1 of 1 result</p>
-                      <Button variant="ghost" className="w-full bg-gray-100 hover:bg-gray-100 py-3 rounded-lg">
-                        Add Videos
-                      </Button>
+                      <Button
+          onClick={toggleSidebar} // Added onClick here to open the sidebar
+          variant="ghost"
+          className="w-full bg-gray-100 hover:bg-gray-100 py-3 rounded-lg"
+        >
+          Add Videos
+        </Button>
                     </div>
                   </TableCell>
                 </TableRow>

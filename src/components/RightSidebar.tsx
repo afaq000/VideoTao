@@ -43,13 +43,13 @@ const RightSideBar = () => {
           <div className="Border-[1px] border-gray-200"/>
 
           {/* Add URL Section */}
-          <div className="flex items-center space-x-2 border-t border-gray-200 pt-4">
+          <div className="flex flex-col  sm2:flex-row items-center space-x-2 border-t border-gray-200 pt-4">
             <Input type="url" placeholder="https://www.youtube.com/watch?v=" className="flex-1 border border-gray-400 placeholder:text-gray-400" />
-            <Button variant="default" className="text-white bg-black">Add video</Button>
+            <Button variant="default" className="text-white bg-black mt-2 sm2:mt-0 w-full sm2:w-1/5 px-2">Add video</Button>
           </div>
 
           {/* Connect YouTube Channel Section */}
-          <div className="border-t border-gray-200 pt-4">
+          <div className=" border-t border-gray-200 pt-4">
             <p className="text-xxs text-gray-400 mb-2">Choose from your YouTube videos</p>
             <Button variant="outline" className="w-full border border-gray-400 text-gray-400">
               <span  role="img" aria-label="YouTube" className="mr-2 text-gray-400">📹</span> Connect a YouTube Channel
