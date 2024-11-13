@@ -26,7 +26,7 @@ const LoginPage = () => {
           <h2 className="text-2xl font-semibold text-center">Login</h2>
           <h2 className="text-xs text-gray-400 text-center">Get Start</h2>
         </CardHeader>
-      <Card className="w-96 shadow-lg mt-3">
+      <Card className="w-full md:w-96 shadow-lg mt-3">
         
 
         <CardContent>

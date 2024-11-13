@@ -27,7 +27,7 @@ const SignUpPage = () => {
           <h2 className="text-xs text-center text-gray-400">Create New Account</h2>
 
         </CardHeader>
-      <Card className="w-96 shadow-lg">
+      <Card className="w-full md:w-96 shadow-lg">
         
 
         <CardContent>
