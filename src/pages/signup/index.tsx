@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState } from "react";
-import { IoEye, IoEyeOff } from "react-icons/io5";
+// import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import DecorativeBackground from "@/components/DecorativeBackground";
@@ -36,11 +36,7 @@ const SignUpPage = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const handleSignUp = (values: {
-    name: string;
-    email: string;
-    password: string;
-  }) => {
+  const handleSignUp = (values: unknown) => {
     console.log("Signing up with:", values);
   };
 
@@ -48,10 +44,12 @@ const SignUpPage = () => {
     <>
       <DecorativeBackground />
 
-      <div className="w-full absolute top-7  flex flex-col items-center min-h-screen shadow-lg bg-gray-100">
-        <Card className="w-full md:w-96 shadow-lg bg-white ">
+      <div className="w-full absolute top-7 flex flex-col items-center min-h-screen shadow-lg bg-gray-100">
+        <Card className="w-full md:w-96 shadow-lg bg-white">
           <CardHeader>
-            <h2 className="text-xl font-medium">Create your free account</h2>
+            <h2 className="text-lg font-medium font-sans text-littleBlack">
+              Create your free account
+            </h2>
             <div className="border-b pt-2" />
           </CardHeader>
 
@@ -65,95 +63,121 @@ const SignUpPage = () => {
             validationSchema={validationSchema}
             onSubmit={handleSignUp}
           >
-            <Form>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="">
-                    <Label htmlFor="name" className="text-xs">
-                      Name
-                    </Label>
-                    <Field
-                      id="name"
-                      name="name"
-                      type="text"
-                      placeholder="Enter your User Name"
-                      className="w-full mt-2 border border-gray-300 placeholder:text-gray-400"
-                      as={Input}
-                    />
-                    <ErrorMessage
-                      name="name"
-                      component="div"
-                      className="text-red-500 text-xs"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email" className="text-xs">
-                      Email
-                    </Label>
-                    <Field
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="Enter your email"
-                      className="w-full mt-2 border border-gray-300 placeholder:text-gray-400"
-                      as={Input}
-                    />
-                    <ErrorMessage
-                      name="email"
-                      component="div"
-                      className="text-red-500 text-xs"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="password" className="text-xs">
-                      Password
-                    </Label>
-                    <div className="relative">
+            {({   values,
+              handleChange,
+              handleBlur,
+              errors,
+              touched, }) => (
+              <Form>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div>
+                      <Label htmlFor="name" className="!text-xxs font-medium text-gray-700 font-sans">
+                        Name
+                      </Label>
                       <Field
-                        id="password"
-                        name="password"
-                        type={passwordVisible ? "text" : "password"}
-                        placeholder="Enter your password"
-                        className="w-full mt-2 pr-10 border-gray-300 placeholder:text-gray-400"
+                        id="name"
+                        name="name"
+                        type="text"
+                        className={`w-full mt-2 border py-1 ${
+                          touched.name && errors.name
+                            ? "border-red-500"
+                            : "border-gray-300"
+                        } focus:border-focus-blue focus:border-1`}
                         as={Input}
                       />
-                      <button
-                        type="button"
-                        onClick={handlePasswordVisibilityToggle}
-                        className="absolute inset-y-0 right-2 flex items-center text-gray-500"
-                      >
-                        {passwordVisible ? <IoEyeOff /> : <IoEye />}
-                      </button>
+                      <ErrorMessage
+                        name="name"
+                        component="div"
+                        className="text-red-500 text-xs"
+                      />
                     </div>
-                    <ErrorMessage
-                      name="password"
-                      component="div"
-                      className="text-red-500 text-xs"
-                    />
+
+                    <div>
+                      <Label htmlFor="email" className="!text-xxs font-medium text-gray-700 font-sans">
+                        Email
+                      </Label>
+                      <Field
+                        id="email"
+                        name="email"
+                        type="email"
+                        className={`w-full mt-2 border py-1 ${
+                          touched.email && errors.email
+                            ? "border-red-500"
+                            : "border-gray-300"
+                        } focus:border-focus-blue focus:border-1`}
+                        as={Input}
+                      />
+                      <ErrorMessage
+                        name="email"
+                        component="div"
+                        className="text-red-500 text-xs"
+                      />
+                    </div>
+
+                    <div>
+                        <Label
+                          htmlFor="password"
+                          className="!text-xxs font-medium text-gray-700 font-sans"
+                        >
+                          Password
+                        </Label>
+                        <div className="relative flex items-center mt-2">
+                          <Input
+                            id="password"
+                            type={passwordVisible ? "text" : "password"}
+                            name="password"
+                            value={values.password}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={`w-full pr-10 border ${
+                              touched.password && errors.password
+                                ? "border-red-500"
+                                : "border-gray-300"
+                            } focus:border-focus-blue focus:ring-0`}
+                          />
+                          <button
+                            type="button"
+                            onClick={handlePasswordVisibilityToggle}
+                            className="absolute right-2 text-gray-500"
+                            style={{
+                              top: "50%",
+                              transform: "translateY(-50%)",
+                            }}
+                          >
+                            {/* {passwordVisible ? <IoEyeOff /> : <IoEye />} */}
+                          </button>
+                        </div>
+                        <ErrorMessage
+                          name="password"
+                          component="div"
+                          className="text-xs text-red-500 mt-1"
+                        />
+                      </div>
+
+                  
                   </div>
-                </div>
-              </CardContent>
+                </CardContent>
 
-              <CardFooter>
-                <div className=" w-full flex justify-between items-center -mt-2">
-                  <Link href="/login">
-                    <p className="text-gray-400 hover:underline text-xxs">
-                      Already have an account?
-                    </p>
-                  </Link>
+                <CardFooter>
+                  <div className="w-full flex justify-between items-center -mt-2">
+                    <Link href="/login">
+                      <p className="text-gray-400 font-sans hover:bg-gray-50 hover:py-2 hover:px-1 hover:rounded-md text-xxs">
+                        Already have an account?
+                      </p>
+                    </Link>
 
-                  <Button
-                    variant="default"
-                    type="submit"
-                    className="bg-black text-white text-xs"
-                  >
-                    Register
-                  </Button>
-                </div>
-              </CardFooter>
-            </Form>
+                    <Button
+                      variant="default"
+                      type="submit"
+                      className="bg-black text-white !text-xxs"
+                    >
+                      Register
+                    </Button>
+                  </div>
+                </CardFooter>
+              </Form>
+            )}
           </Formik>
         </Card>
       </div>

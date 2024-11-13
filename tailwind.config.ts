@@ -85,6 +85,7 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			},
 			lightBlack:"#29292C",
+			littleBlack:"#27272A",
   		},
   	}
   },

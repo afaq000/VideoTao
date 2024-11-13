@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { IoEye, IoEyeOff } from "react-icons/io5";
+// import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import DecorativeBackground from "@/components/DecorativeBackground";
@@ -68,11 +68,11 @@ const LoginPage = () => {
             }) => (
               <form onSubmit={handleSubmit}>
                 <CardContent>
-                  <div className="space-y-6 pt-4">
+                  <div className="space-y-2 pt-4">
                     <div>
                       <Label
                         htmlFor="email"
-                        className="text-xs font-medium text-gray-700"
+                        className="!text-xxs font-medium text-gray-700 font-sans"
                       >
                         Email
                       </Label>
@@ -92,7 +92,7 @@ const LoginPage = () => {
                       <ErrorMessage
                         name="email"
                         component="div"
-                        className="text-xs text-red-500"
+                        className="text-xs text-red-500 mt-1"
                       />
                     </div>
 
@@ -100,7 +100,7 @@ const LoginPage = () => {
                       <div>
                         <Label
                           htmlFor="password"
-                          className="text-xs font-medium text-gray-700"
+                          className="!text-xxs font-medium text-gray-700 font-sans"
                         >
                           Password
                         </Label>
@@ -127,7 +127,7 @@ const LoginPage = () => {
                               transform: "translateY(-50%)",
                             }}
                           >
-                            {passwordVisible ? <IoEyeOff /> : <IoEye />}
+                            {/* {passwordVisible ? <IoEyeOff /> : <IoEye />} */}
                           </button>
                         </div>
                         <ErrorMessage
@@ -148,7 +148,7 @@ const LoginPage = () => {
                       </p>
                     </Link>
                     <Link href="/signup">
-                      <p className="text-gray-400 hover:bg-gray-50 hover:py-2 hover:px-1 hover:rounded-md text-xxs">
+                      <p className="text-gray-400 font-sans hover:bg-gray-50 hover:py-2 hover:px-1 hover:rounded-md text-xxs">
                         Forgot your password?
                       </p>
                     </Link>
@@ -156,7 +156,7 @@ const LoginPage = () => {
                     <Button
                       variant="active"
                       type="submit"
-                      className="bg-lightBlack rounded-md px-4 py-1 text-white text-xs"
+                      className="bg-lightBlack rounded-md px-5 !py-0 text-white !text-xxs"
                     >
                       Login
                     </Button>
