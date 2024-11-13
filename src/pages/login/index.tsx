@@ -49,7 +49,7 @@ const LoginPage = () => {
       <div className="w-full absolute top-7  flex flex-col items-center min-h-screen shadow-lg bg-gray-100">
         <Card className="w-full md:w-96 shadow-lg bg-white ">
           <CardHeader>
-            <h2 className="text-xl font-medium">Login</h2>
+            <h2 className="text-lg font-medium font-sans">Login</h2>
             <div className="border-b pt-5" />
           </CardHeader>
 
@@ -70,7 +70,10 @@ const LoginPage = () => {
                 <CardContent>
                   <div className="space-y-6 pt-4">
                     <div>
-                      <Label htmlFor="email" className="text-xs">
+                      <Label
+                        htmlFor="email"
+                        className="text-xs font-medium text-gray-700"
+                      >
                         Email
                       </Label>
                       <Input
@@ -80,53 +83,57 @@ const LoginPage = () => {
                         value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="Enter your email"
-                        className={`w-full mt-2 border ${
-                          errors.email && touched.email
+                        className={`w-full mt-2 border py-1 ${
+                          touched.email && errors.email
                             ? "border-red-500"
                             : "border-gray-300"
-                        }`}
+                        } focus:border-focus-blue focus:border-1 `}
                       />
                       <ErrorMessage
                         name="email"
                         component="div"
-                        className="text-sm text-red-500"
+                        className="text-xs text-red-500"
                       />
                     </div>
 
                     <div>
-                      <div className="w-full flex justify-between">
-                        {" "}
-                        <Label htmlFor="password" className="text-xs">
-                          Password
-                        </Label>{" "}
-                      </div>
-                      <div className="relative">
-                        <Input
-                          id="password"
-                          type={passwordVisible ? "text" : "password"}
-                          name="password"
-                          value={values.password}
-                          onChange={handleChange}
-                          onBlur={handleBlur}
-                          placeholder="Enter your password"
-                          className={`w-full mt-2 pr-10 border ${
-                            errors.password && touched.password
-                              ? "border-red-500"
-                              : "border-gray-300"
-                          }`}
-                        />
-                        <button
-                          type="button"
-                          onClick={handlePasswordVisibilityToggle}
-                          className="absolute inset-y-0 right-2 flex items-center bg-none text-gray-500"
+                      <div>
+                        <Label
+                          htmlFor="password"
+                          className="text-xs font-medium text-gray-700"
                         >
-                          {passwordVisible ? <IoEyeOff /> : <IoEye />}
-                        </button>
+                          Password
+                        </Label>
+                        <div className="relative flex items-center mt-2">
+                          <Input
+                            id="password"
+                            type={passwordVisible ? "text" : "password"}
+                            name="password"
+                            value={values.password}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            className={`w-full pr-10 border ${
+                              touched.password && errors.password
+                                ? "border-red-500"
+                                : "border-gray-300"
+                            } focus:border-focus-blue focus:ring-0`}
+                          />
+                          <button
+                            type="button"
+                            onClick={handlePasswordVisibilityToggle}
+                            className="absolute right-2 text-gray-500"
+                            style={{
+                              top: "50%",
+                              transform: "translateY(-50%)",
+                            }}
+                          >
+                            {passwordVisible ? <IoEyeOff /> : <IoEye />}
+                          </button>
+                        </div>
                         <ErrorMessage
                           name="password"
                           component="div"
-                          className="text-sm text-red-500"
+                          className="text-xs text-red-500 mt-1"
                         />
                       </div>
                     </div>
@@ -134,22 +141,22 @@ const LoginPage = () => {
                 </CardContent>
 
                 <CardFooter>
-                  <div className=" w-full flex justify-between items-center -mt-2">
+                  <div className=" w-full flex justify-between items-center -mt-2 gap-3">
                     <Link href="/signup">
-                      <p className="text-gray-400 hover:underline text-xxs">
-                        Need Account ?
+                      <p className="text-gray-400 hover:bg-gray-50 hover:py-2 hover:px-1 hover:rounded-md  text-xxs">
+                        Need an account?
                       </p>
                     </Link>
                     <Link href="/signup">
-                      <p className="text-gray-400 hover:underline text-xxs">
-                        Forgot Your Password
+                      <p className="text-gray-400 hover:bg-gray-50 hover:py-2 hover:px-1 hover:rounded-md text-xxs">
+                        Forgot your password?
                       </p>
                     </Link>
 
                     <Button
-                      variant="default"
+                      variant="active"
                       type="submit"
-                      className="bg-black text-white text-xs"
+                      className="bg-lightBlack rounded-md px-4 py-1 text-white text-xs"
                     >
                       Login
                     </Button>

@@ -10,11 +10,15 @@ export default {
   ],
   theme: {
   	extend: {
+		borderColor: {
+			'focus-blue': '#2563eb', // Tailwind's blue-400 color hex
+		  },
 		fontFamily: {
-			sans: ['Inter', 'sans-serif'], // Add Inter or any other font
+			sans: ['Inter var', 'Inter', 'sans-serif'],
 		  },
 		  fontSize: {
-			xxs: '10px',  // Define text-[10px]
+			xxs: '10px',  
+			small:'8px',
 		  },
 		  transitionTimingFunction: {
 			'ease-red': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',     // For red bar
@@ -79,7 +83,8 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			lightBlack:"#29292C",
   		},
   	}
   },
