@@ -47,7 +47,7 @@ const SignUpPage = () => {
       <div className="w-full absolute top-7 flex flex-col items-center min-h-screen shadow-lg bg-gray-100">
         <Card className="w-full md:w-96 shadow-lg bg-white">
           <CardHeader>
-            <h2 className="text-lg font-medium font-sans text-littleBlack">
+            <h2 className="text-lg font-medium !font-sans text-littleBlack">
               Create your free account
             </h2>
             <div className="border-b pt-2" />
