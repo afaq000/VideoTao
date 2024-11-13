@@ -24,3 +24,32 @@
   --background-dark: 0, 0%, 10%; /* Dark background */
   --foreground-dark: 0, 0%, 90%; /* Dark foreground */
 }
+
+
+
+/* Equalizer Container */
+.equalizer {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+/* Equalizer Bar */
+.bar {
+  width: 4px;
+  height: 30px;
+  background-color: #ff4d4f; /* You can vary the color for each bar */
+  animation: bounce 1s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
