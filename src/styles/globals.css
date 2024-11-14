@@ -1,34 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  font-family: "Inter", sans-serif;
+}
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 :root {
   /* Define primary color scheme */
   --primary: 210, 100%, 50%; /* Example primary color */
   --primary-foreground: 210, 100%, 90%; /* Light foreground color for primary */
-  
+
   /* Define secondary color scheme */
   --secondary: 120, 100%, 40%; /* Example secondary color */
   --secondary-foreground: 120, 100%, 80%; /* Light foreground color for secondary */
-  
+
   /* Define other colors */
   --muted: 200, 10%, 60%; /* Muted color */
   --accent: 50, 100%, 60%; /* Accent color */
   --destructive: 0, 100%, 50%; /* Destructive color */
   --background: 0, 0%, 100%; /* Background color */
   --foreground: 0, 0%, 0%; /* Foreground color */
-  
+
   /* Optionally, you can define a darker mode set */
   --background-dark: 0, 0%, 10%; /* Dark background */
   --foreground-dark: 0, 0%, 90%; /* Dark foreground */
-}
-
-
-body {
-  font-family: 'Inter', sans-serif;
 }
 
 /* Equalizer Container */
@@ -50,7 +46,8 @@ body {
 
 /* Animations */
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: scaleY(1);
   }
   50% {

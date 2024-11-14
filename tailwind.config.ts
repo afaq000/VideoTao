@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
   	extend: {
+		width: {
+			'1/27': '27%', // Adds w-1/22 for approximately 22% width
+		  },
 		borderColor: {
 			'focus-blue': '#2563eb', // Tailwind's blue-400 color hex
 		  },
@@ -86,6 +89,7 @@ export default {
   			},
 			lightBlack:"#29292C",
 			littleBlack:"#27272A",
+			LightGray:"#F5F5F5"
   		},
   	}
   },

@@ -9,6 +9,10 @@ import IntegrationIcon from "./Icons/IntegrationIcon";
 import SittingIcon from "./Icons/SittingIcon";
 import MenuIcon from "./Icons/MenuIcon";
 import StarIcon from "./Icons/StarIcon";
+import CrossIcons from "./Icons/CrossIcons";
+import ManagmentIcon from "./Icons/ManagmentIcon";
+import BillingIcon from "./Icons/BillingIcon";
+import PlusICon from "./Icons/PlusICon";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false); 
@@ -43,7 +47,7 @@ const Navbar = () => {
             <div className="fixed top-0 left-0 h-screen w-1/4 bg-black z-50 pl-4 flex flex-col space-y-4">
               <div className="w-full flex justify-start -ml-5  mb-16">          
                 <Button variant={"active"} onClick={toggleSidebar} className="text-white self-start">
-                  <ShieldCloseIcon className="h-5 w-5" />
+                 <CrossIcons/>
                 </Button>
 
               </div>
@@ -103,32 +107,26 @@ const Navbar = () => {
                   <ChevronDownIcon className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-gray-800 text-white rounded-md shadow-lg p-2 w-48">
-                <DropdownMenuLabel className="text-gray-400">Team Menu</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Team Settings</DropdownMenuItem>
-                <DropdownMenuItem>Log Out</DropdownMenuItem>
+              <DropdownMenuContent className="bg-zinc-700 text-white rounded-md shadow-lg p-2 mr-20 w-64 border border-gray-600 ">
+              
+                <DropdownMenuItem className="gap-1 text-sm focus:bg-zinc-600"><ManagmentIcon /> Manage Team</DropdownMenuItem>
+                <DropdownMenuItem className="gap-1 text-sm focus:bg-zinc-600"><BillingIcon/>  Billing</DropdownMenuItem>
+                <DropdownMenuItem className="gap-1 text-sm focus:bg-zinc-600"><PlusICon/>  Create New Team</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Avatar className="w-8 h-8 bg-zinc-700 border border-gray-600 text-white flex justify-center items-center text-sm rounded-lg">
+                <Avatar className="w-8 h-8 bg-zinc-700 border cursor-pointer border-gray-600 text-white flex justify-center items-center text-sm rounded-lg">
                   <p>AH</p>
                 </Avatar>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-gray-800 text-white rounded-md shadow-lg p-2 w-56">
-                <DropdownMenuLabel className="text-gray-400">Appearance</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem as="button" onClick={() => setShowStatusBar(!showStatusBar)} checked={showStatusBar}>
-                  Status Bar
-                </DropdownMenuItem>
-                <DropdownMenuItem as="button" onClick={() => setShowActivityBar(!showActivityBar)} checked={showActivityBar} disabled>
-                  Activity Bar
-                </DropdownMenuItem>
-                <DropdownMenuItem as="button" onClick={() => setShowPanel(!showPanel)} checked={showPanel}>
-                  Panel
-                </DropdownMenuItem>
+              <DropdownMenuContent className="bg-zinc-700 text-white rounded-md shadow-lg p-2 mr-10 w-52">
+              <DropdownMenuItem className="gap-1 text-sm focus:bg-zinc-600"> 
+                <Link href={"/"}>Profile </Link></DropdownMenuItem>
+              <DropdownMenuSeparator className="border border-zinc-600"/> 
+              <DropdownMenuItem className="gap-1 text-sm focus:bg-zinc-600">
+                <Link href={"/"}>Log Out</Link> </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>

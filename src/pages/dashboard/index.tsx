@@ -4,6 +4,7 @@ import RightSideBar from "@/components/RightSidebar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { IoFolderOpenOutline } from "react-icons/io5";
 import {
   Table,
   TableBody,
@@ -13,7 +14,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Badge } from "lucide-react";
 import React, { useState } from "react";
 
 function index() {
@@ -25,12 +25,12 @@ function index() {
     setIsSidebarOpen((prev) => !prev);
   };
   return (
-    <div className="bg-gray-100 ">
+    <div className="bg-LightGray ">
       <Navbar />
 
-      <div className="w-full px-14 ">
-        <div className="flex  flex-col lg:flex-row lg:justify-between items-center mt-10  ">
-          <h1 className="text-2xl from-accent-foreground">
+      <div className="w-full px-8 ">
+        <div className="flex  flex-col lg:flex-row lg:justify-between items-center mt-12  ">
+          <h1 className="text-3xl from-accent-foreground font-medium text-zinc-700">
             Dashboard{" "}
             <span className="text-xs text-gray-400">
               1 video turned into marketing content
@@ -50,22 +50,22 @@ function index() {
        
 
         <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen py-10">
-          <div className="w-full flex flex-col sm2:flex-row gap-4 lg:gap-0 lg:flex-col py-5  space-y-0 lg:space-y-6  lg:w-1/4 pr-0 lg:pr-6">
+          <div className="w-full flex flex-col sm2:flex-row gap-4 lg:gap-0 lg:flex-col py-0  space-y-0 lg:space-y-6  lg:w-1/27 pr-0 lg:pr-6">
             <Card className="w-full border bg-white">
               <CardHeader>
-                <CardTitle>Folders</CardTitle>
+                <CardTitle className="font-normal font-sans">Folders</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2 bg-slate-200 py-1 px-1 rounded-lg">
-                    <span className="text-xs font-medium ">📁 All Videos</span>
+                <div className="space-y-2  -mt-3">
+                  <div className="flex items-center space-x-2 mb-4 bg-zinc-100 py-1 px-1 rounded-md">
+                    <span className="text-sm font-medium flex gap-2 items-center "><IoFolderOpenOutline className="w-4 h-4"/> All Videos</span>
                   </div>
                   <Input
                     placeholder="New folder name"
-                    className="placeholder:text-gray-400 border-gray-200"
+                    className="placeholder:text-gray-400 border-gray-200 h-8 shadow-sm"
                   />
                   <p className="w-full text-end text-xs cursor-pointer">
-                    + Create Folder
+                    <span className="text-lg"> +</span> Create Folder
                   </p>
                 </div>
               </CardContent>
@@ -105,7 +105,7 @@ function index() {
               <div className="mb-6 ">
                 <Input
                   placeholder="Search videos..."
-                  className="border border-gray-300 bg-white placeholder:text-gray-400"
+                  className="border border-gray-300 bg-white placeholder:text-gray-400 h-9"
                 />
               </div>
 
