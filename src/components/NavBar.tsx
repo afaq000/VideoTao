@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuItem } from "./ui/dropdown-menu";
 import { Avatar } from "./ui/avatar";
 import Link from "next/link";
+import HomeIcons from "./Icons/HomeIcons";
+import IntegrationIcon from "./Icons/IntegrationIcon";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false); 
@@ -52,8 +54,8 @@ const Navbar = () => {
             <div className="text-xs">Video Tap</div>
             
           </div>
-              <NavItem icon={<HomeIcon className="h-4 w-4" />} label="Home" />
-              <NavItem icon={<PuzzleIcon className="h-4 w-4" />} label="Integrations" />
+              <NavItem icon={<HomeIcons/>} label="Home" />
+              <NavItem icon={<IntegrationIcon />} label="Integrations" />
               <NavItem icon={<CogIcon className="h-4 w-4" />} label="Settings" />
             </div>
           )}
@@ -73,8 +75,8 @@ const Navbar = () => {
               <span className="text-xxs ">Video Tap</span>
             </div>
             <div className="flex items-center space-x-6">
-              <NavItem icon={<HomeIcon className="h-4 w-4" />} label="Home" />
-              <NavItem icon={<PuzzleIcon className="h-4 w-4" />} label="Integrations" />
+              <NavItem icon={<HomeIcons/>} label="Home" />
+              <NavItem icon={<IntegrationIcon />} label="Integrations" />
               <NavItem icon={<CogIcon className="h-4 w-4" />} label="Settings" />
             </div>
           </div>

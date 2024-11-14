@@ -30,7 +30,7 @@ function index() {
 
       <div className="w-full px-14 ">
         <div className="flex  flex-col lg:flex-row lg:justify-between items-center mt-10  ">
-          <h1 className="text-2xl ">
+          <h1 className="text-2xl from-accent-foreground">
             Dashboard{" "}
             <span className="text-xs text-gray-400">
               1 video turned into marketing content
