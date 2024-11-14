@@ -17,7 +17,6 @@ import {
 import React, { useState } from "react";
 
 function index() {
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Toggle function to open/close the sidebar
@@ -39,15 +38,11 @@ function index() {
 
           <Button
             onClick={toggleSidebar}
-            className="bg-purple-600 text-white rounded-md px-4 py-2">
+            className="bg-purple-600 text-white rounded-md px-4 py-2"
+          >
             + Add Videos <span className="ml-2 text-xs">2 free</span>
           </Button>
         </div>
-
-        
-
-
-       
 
         <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen py-10">
           <div className="w-full flex flex-col sm2:flex-row gap-4 lg:gap-0 lg:flex-col py-0  space-y-0 lg:space-y-6  lg:w-1/27 pr-0 lg:pr-6">
@@ -58,7 +53,9 @@ function index() {
               <CardContent>
                 <div className="space-y-2  -mt-3">
                   <div className="flex items-center space-x-2 mb-4 bg-zinc-100 py-1 px-1 rounded-md">
-                    <span className="text-sm font-medium flex gap-2 items-center "><IoFolderOpenOutline className="w-4 h-4"/> All Videos</span>
+                    <span className="text-sm font-medium flex gap-2 items-center ">
+                      <IoFolderOpenOutline className="w-4 h-4" /> All Videos
+                    </span>
                   </div>
                   <Input
                     placeholder="New folder name"
@@ -77,19 +74,23 @@ function index() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col space-y-2">
-                  <div className="flex justify-between items-center">
+                  <div className="w-full flex justify-between items-center">
                     <span className="text-xs">2 videos</span>
-                    <p className="bg-slate-200 text-xxs rounded-lg py-1 px-1 cursor-pointer">
+                    <div className="bg-zinc-100 w-min-36 w-32 px-1 flex justify-center items-center rounded-md ">
+                    <p className=" text-xs  py-1  cursor-pointer">
                       {" "}
                       Get more videos
                     </p>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="w-full flex justify-between items-center ">
                     <span className="text-xs">0 team members</span>
-                    <p className="bg-slate-200 text-xxs rounded-lg py-1 px-1 cursor-pointer">
+                    <div className="bg-zinc-100 w-min-36 w-32 px-1 flex justify-center items-center rounded-md ">
+                    <p className=" text-xs py-1 px-1 text-center cursor-pointer">
                       {" "}
                       Add team members
                     </p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -98,8 +99,6 @@ function index() {
 
           {/* Main Content Area */}
           <div className="flex-1">
-        
-
             {/* Search Bar */}
             <div className="bg-gray-300 py-2 px-2 rounded-md">
               <div className="mb-6 ">
@@ -112,7 +111,7 @@ function index() {
               {/* Video Table */}
               <Table className="bg-white rounded-lg shadow">
                 <TableHeader>
-                  <TableRow >
+                  <TableRow>
                     <TableHead className="w-1/6"> </TableHead>
                     <TableHead>Title</TableHead>
                     <TableHead>Duration</TableHead>
@@ -128,41 +127,40 @@ function index() {
                     <TableCell>ai_python.mp4</TableCell>
                     <TableCell>2 mins</TableCell>
                     <TableCell>
-                    <span className="bg-gray-100 text-gray-400 px-2 py-1 rounded-full text-xs">
-                      Ready
-                    </span>
+                      <span className="bg-gray-100 text-gray-400 px-2 py-1 rounded-full text-xs">
+                        Ready
+                      </span>
                     </TableCell>
                     <TableCell>...</TableCell>
                   </TableRow>
                 </TableBody>
-                
 
                 <TableFooter>
-                <TableRow>
-                  <TableCell colSpan={5}>
-                    <div className="flex flex-col  space-y-2 py-4">
-                      <p className="text-xs text-gray-500">Showing 1 to 1 of 1 result</p>
-                      <Button
-          onClick={toggleSidebar} // Added onClick here to open the sidebar
-          variant="ghost"
-          className="w-full bg-gray-100 hover:bg-gray-100 py-3 rounded-lg"
-        >
-          Add Videos
-        </Button>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              </TableFooter>
+                  <TableRow>
+                    <TableCell colSpan={5}>
+                      <div className="flex flex-col  space-y-2 py-4">
+                        <p className="text-xs text-gray-500">
+                          Showing 1 to 1 of 1 result
+                        </p>
+                        <Button
+                          onClick={toggleSidebar} // Added onClick here to open the sidebar
+                          variant="ghost"
+                          className="w-full bg-gray-100 hover:bg-gray-100 py-3 rounded-lg"
+                        >
+                          Add Videos
+                        </Button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                </TableFooter>
               </Table>
             </div>
           </div>
         </div>
       </div>
 
-       {isSidebarOpen && (
-        <div
-          className="w-92 fixed right-0 top-0 h-full bg-white shadow-lg overflow-y-auto"
-        >
+      {isSidebarOpen && (
+        <div className="w-92 fixed right-0 top-0 h-full bg-white shadow-lg overflow-y-auto">
           <RightSideBar />
           <button
             onClick={toggleSidebar}
