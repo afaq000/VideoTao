@@ -1,4 +1,4 @@
-import { CogIcon, HomeIcon, PuzzleIcon, ChevronDownIcon, MenuIcon, ShieldCloseIcon } from "lucide-react";
+import { CogIcon, HomeIcon, PuzzleIcon, ChevronDownIcon, ShieldCloseIcon } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuItem } from "./ui/dropdown-menu";
@@ -6,6 +6,8 @@ import { Avatar } from "./ui/avatar";
 import Link from "next/link";
 import HomeIcons from "./Icons/HomeIcons";
 import IntegrationIcon from "./Icons/IntegrationIcon";
+import SittingIcon from "./Icons/SittingIcon";
+import MenuIcon from "./Icons/MenuIcon";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false); 
@@ -34,7 +36,7 @@ const Navbar = () => {
       {isMobile ? (
         <>
           <Button variant={"active"} className="lg:hidden text-white" onClick={toggleSidebar}>
-            <MenuIcon className="h-5 w-5" />
+            <MenuIcon />
           </Button>
           {showSidebar && (
             <div className="fixed top-0 left-0 h-screen w-1/4 bg-black z-50 pl-4 flex flex-col space-y-4">
@@ -56,7 +58,7 @@ const Navbar = () => {
           </div>
               <NavItem icon={<HomeIcons/>} label="Home" />
               <NavItem icon={<IntegrationIcon />} label="Integrations" />
-              <NavItem icon={<CogIcon className="h-4 w-4" />} label="Settings" />
+              <NavItem icon={<SittingIcon/>} label="Settings" />
             </div>
           )}
         </>
@@ -77,7 +79,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-6">
               <NavItem icon={<HomeIcons/>} label="Home" />
               <NavItem icon={<IntegrationIcon />} label="Integrations" />
-              <NavItem icon={<CogIcon className="h-4 w-4" />} label="Settings" />
+              <NavItem icon={<SittingIcon/>} label="Settings" />
             </div>
           </div>
 
