@@ -8,6 +8,7 @@ import HomeIcons from "./Icons/HomeIcons";
 import IntegrationIcon from "./Icons/IntegrationIcon";
 import SittingIcon from "./Icons/SittingIcon";
 import MenuIcon from "./Icons/MenuIcon";
+import StarIcon from "./Icons/StarIcon";
 
 const Navbar = () => {
   const [showSidebar, setShowSidebar] = useState(false); 
@@ -21,7 +22,7 @@ const Navbar = () => {
 
   const checkScreenSize = () => {
     if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth < 1025);
+      setIsMobile(window.innerWidth < 1024);
     }
   };
 
@@ -64,20 +65,24 @@ const Navbar = () => {
         </>
       ) : (
         <>
-          <div className="absolute left-3 top-0 -translate-y-1/4"> {/* Removed hidden lg:block */}
+          <div className="absolute left-8 top-0 -translate-y-1/4"> {/* Removed hidden lg:block */}
             <div className="group grid grid-cols-3 gap-1">
-              <div className="h-12 group-hover:translate-y-3 w-[4px] rounded-full bg-red-500 transition-transform duration-500 ease-red"></div>
-              <div className="h-6 group-hover:-translate-y-2 w-[4px] rounded-full bg-yellow-500 transition-transform duration-500 ease-yellow"></div>
-              <div className="h-9 group-hover:translate-y-1 w-[4px] rounded-full bg-violet-500 transition-transform duration-500 ease-violet"></div>
+              <div className="h-14 group-hover:translate-y-3 w-[5px] rounded-full bg-red-500 transition-transform duration-500 ease-red"></div>
+              <div className="h-7 group-hover:-translate-y-2 w-[5px] rounded-full bg-yellow-500 transition-transform duration-500 ease-yellow"></div>
+              <div className="h-11 group-hover:translate-y-1 w-[5px] rounded-full bg-violet-500 transition-transform duration-500 ease-violet"></div>
             </div>
           </div>
 
-          <div className="flex items-center space-x-4 pl-10">
-            <div className="flex items-center space-x-2">
-              <span className="text-xxs ">Video Tap</span>
+          <div className="flex items-center space-x-4 pl-12">
+            <div className="flex items-center space-x-3 pr-4">
+              
+              <Link href={"/"}>
+              <span className="text-sm ">Video Tap</span>
+              </Link>
+
             </div>
-            <div className="flex items-center space-x-6">
-              <NavItem icon={<HomeIcons/>} label="Home" />
+            <div className="flex items-center text-sm gap-10 ">
+              <NavItem icon={<HomeIcons/>}  label="Home" />
               <NavItem icon={<IntegrationIcon />} label="Integrations" />
               <NavItem icon={<SittingIcon/>} label="Settings" />
             </div>
@@ -85,16 +90,16 @@ const Navbar = () => {
 
           <div className="flex items-center space-x-6">
             <Link href={"/"}>
-              <span className="text-[8px] text-gray-400 underline">3 free videos left</span>
+              <span className="text-xs text-gray-300 border-b border-dashed border-gray-200">3 free videos left</span>
             </Link>
-            <Button variant={"active"} className="bg-pink-500 hover:bg-pink-600 text-white rounded-md px-2 text-xxs">
-              Upgrade
+            <Button variant={"destructive"} className="bg-pink-600 hover:bg-pink-600 text-white rounded-md px-3 my-2 text-sm">
+              <StarIcon/> Upgrade
             </Button>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="bg-transparent text-white flex items-center space-x-1 text-xxs">
-                  <span>Afaq Team</span>
+                <Button className="bg-transparent text-white flex items-center space-x-1 text-sm hover:bg-zinc-800 hover:py-2 hover:px-1 hover:rounded-md  ">
+                  <span>Afaq's Team</span>
                   <ChevronDownIcon className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -108,7 +113,7 @@ const Navbar = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Avatar className="w-8 h-8 bg-gray-600 text-white flex justify-center items-center text-xxs rounded-lg">
+                <Avatar className="w-8 h-8 bg-zinc-700 border border-gray-600 text-white flex justify-center items-center text-sm rounded-lg">
                   <p>AH</p>
                 </Avatar>
               </DropdownMenuTrigger>
@@ -134,9 +139,9 @@ const Navbar = () => {
 };
 
 const NavItem = ({ icon, label }: { icon: React.ReactNode; label: string }) => (
-  <div className="flex items-center space-x-2 hover:text-gray-300 cursor-pointer">
+  <div className="flex items-center space-x-2 hover:text-gray-300 cursor-pointer hover:bg-zinc-800 hover:py-2 hover:px-2 hover:rounded-md">
     {icon}
-    <span className="text-xxs">{label}</span>
+    <span className="text-sm">{label}</span>
   </div>
 );
 
